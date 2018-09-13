@@ -3,17 +3,78 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+        <groupId>com.innovanon.parent_pom</groupId>
+        <artifactId>ParentPom</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+	
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.innovanon.struct</groupId>
 	<artifactId>Structs</artifactId>
-	<!-- <version>0.0.1-SNAPSHOT</version> -->
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
+<!-- 
 	<name>${project.artifactId}</name>
-	<url>https://innovanon-inc.github.io/${project.artifactId}.git</url>
-
+	<url>https://innovanon-inc.github.io/${project.artifactId}.git</url>-->
+	<description>Data Structures in Java</description>
+	
+	<!-- 
+	<issueManagement>
+	<system>Bugzilla</system>
+	<url>http://lmaddox.chickenkiller.com:1234</url>
+	</issueManagement>
+ 	
+ 	<ciManagement>
+ 	<system>Jenkins</system>
+ 	<url>http://lmaddox.chickenkiller.com:8080</url>
+      <notifiers>
+         <notifier>
+            <type>mail</type>
+            <address>InnovAnon-Inc@protonmail.com</address>
+         </notifier>
+      </notifiers>
+ 	</ciManagement>
+ 	
+ 	<developers>
+ 	<developer>
+ 	<email>laurence.a.maddox@gmail.com</email>
+ 	<name>Brahmjot Singh Khalsa</name>
+ 	<organization>InnovAnon, Inc. (Ministries)</organization>
+ 	<organizationUrl>https://innovanon-inc.github.io/LHP</organizationUrl>
+ 	<roles>
+ 	<role>Senior Ministerial Director</role>
+ 	<role>Senior Managing Director</role>
+ 	<role>Project Manager</role>
+ 	<role>Software Architect</role>
+ 	<role>Software Engineer</role>
+ 	<role>Dev Ops Engineer</role>
+ 	<role>Graphic Designer</role>
+ 	<role>Film Score Producer</role>
+ 	</roles>
+ 	<timezone>-5</timezone>
+ 	<url>https://github.com/lmaddox</url>
+ 	</developer>
+ 	</developers>
+ 	
+ 	<mailingLists>
+     <mailingList>
+       <name>${project.artifactId} project mailing list</name>
+       <subscribe>dev-subscribe@innovanon.com</subscribe>
+       <unsubscribe>dev-unsubscribe@innovanon.com</unsubscribe>
+      <post>dev@innovanon.com</post>
+      <archive>http://lmaddox.chickenkiller.com/modmbox/dev/</archive>
+     </mailingList>
+   </mailingLists>
+   
+   <scm>
+		<connection>scm:git:https://github.com/InnovAnon-Inc/${project.artifactId}}.git</connection>
+		<developerConnection>scm:git:git@github.com:InnovAnon-Inc/${project.artifactId}.git</developerConnection>
+		<url>https://github.com/InnovAnon-Inc/${project.artifactId}</url>
+		<tag>HEAD</tag>
+	</scm>
+ 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
@@ -22,13 +83,10 @@
 		<maven.compiler.target>${targetJDK}</maven.compiler.target>
 		<targetJdk>${targetJDK}</targetJdk>
 
-		<!-- <version-plugin-aspectj>1.7-SNAPSHOT</version-plugin-aspectj> <org.aspectj.version>1.7.1</org.aspectj.version> -->
 
 		<version-plugin-aspectj>1.11</version-plugin-aspectj>
-		<!-- <version-plugin-aspectj>1.5</version-plugin-aspectj> -->
 
 		<org.aspectj.version>${version-plugin-aspectj}</org.aspectj.version>
-		<!-- <aspectjVersion>1.9.1</aspectjVersion> -->
 		<aspectjVersion>${java.version}.1</aspectjVersion>
 		<org.aspectj.version>${aspectjVersion}</org.aspectj.version>
 		<mavenVersion>3.5.4</mavenVersion>
@@ -48,8 +106,8 @@
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj.version}</version>
-			<!-- <scope>runtime</scope> -->
-		</dependency>
+-->			<!-- <scope>runtime</scope> -->
+<!-- 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -60,20 +118,20 @@
 		<dependency>
 			<groupId>org.reflections</groupId>
 			<artifactId>reflections</artifactId>
-			<!-- use latest version of Reflections -->
-			<version>${reflections.version}</version>
+-->			<!-- use latest version of Reflections -->
+<!-- 			<version>${reflections.version}</version>
 		</dependency>
 
 
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<!-- any version of Groovy \>= 1.5.0 should work here -->
-			<version>2.5.1</version>
+-->			<!-- any version of Groovy \>= 1.5.0 should work here -->
+<!-- 			<version>2.5.1</version>
 			<scope>runtime</scope>
 			<type>pom</type>
-			<!-- <version>2.4.3</version> -->
-		</dependency>
+-->			<!-- <version>2.4.3</version> -->
+<!--  		</dependency>
 		<dependency>
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
@@ -94,12 +152,11 @@
 					<source>${targetJdk}</source>
 					<target>${targetJdk}</target>
 					<complianceLevel>${targetJdk}</complianceLevel>
-					<!-- <Xlint>ignore</Xlint> -->
 					<verbose>true</verbose>
 					<showWeaveInfo>true</showWeaveInfo>
-					<!-- <aspectLibraries> <aspectLibrary> <groupId>org.springframework</groupId> 
+-->					<!-- <aspectLibraries> <aspectLibrary> <groupId>org.springframework</groupId> 
 						<artifactId>spring-aspects</artifactId> </aspectLibrary> </aspectLibraries> -->
-				</configuration>
+<!--  				</configuration>
 				<executions>
 					<execution>
 						<goals>
@@ -109,9 +166,9 @@
 					</execution>
 				</executions>
 				<dependencies>
-					<!-- Ensure aspectj tools version used by compiler is the same version 
+-->					<!-- Ensure aspectj tools version used by compiler is the same version 
 						used as dependency. Avoids warning -->
-					<dependency>
+<!-- 					<dependency>
 						<groupId>org.aspectj</groupId>
 						<artifactId>aspectjtools</artifactId>
 						<version>${org.aspectj.version}</version>
@@ -143,18 +200,18 @@
 					<dependency>
 						<groupId>org.reflections</groupId>
 						<artifactId>reflections</artifactId>
-						<!-- use latest version of Reflections -->
-						<version>${reflections.version}</version>
+	-->					<!-- use latest version of Reflections -->
+<!--  						<version>${reflections.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>org.codehaus.groovy</groupId>
 						<artifactId>groovy-all</artifactId>
-						<!-- any version of Groovy \>= 1.5.0 should work here -->
-						<version>2.5.1</version>
+-->						<!-- any version of Groovy \>= 1.5.0 should work here -->
+<!--  						<version>2.5.1</version>
 						<scope>runtime</scope>
 						<type>pom</type>
-						<!-- <version>2.4.3</version> -->
-					</dependency>
+-->						<!-- <version>2.4.3</version> -->
+<!-- 					</dependency>
 					<dependency>
 						<groupId>dom4j</groupId>
 						<artifactId>dom4j</artifactId>
@@ -226,6 +283,7 @@
           <old>true</old>
           <packagesheader>Free Code for a Free World</packagesheader>
           <show>private</show>
+          <stylesheet>maven</stylesheet>
           <validateLinks>true</validateLinks>
         </configuration>
       </plugin>
@@ -239,15 +297,59 @@
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>2.8</version>
       </plugin>
+      
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-clover-plugin</artifactId>
+      </plugin>
+      <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+
+         <artifactId>maven-pmd-plugin</artifactId>
+         <configuration>
+            <targetjdk>1.5</targetjdk>
+            <rulesets>
+               <ruleset>/rulesets/basic.xml</ruleset>
+               <ruleset>/rulesets/controversial.xml</ruleset>
+            </rulesets>
+            <format>xml</format>
+            <linkXref>true</linkXref>
+            <sourceEncoding>utf-8</sourceEncoding>
+
+            <minimumTokens>100</minimumTokens>
+         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>changes-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>changelog-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>taglist-maven-plugin</artifactId>
+      </plugin>
     </plugins>
 	</reporting>
 
-	<scm>
-		<connection>scm:git:https://github.com/InnovAnon-Inc/${project.artifactId}}.git</connection>
-		<developerConnection>scm:git:git@github.com:InnovAnon-Inc/${project.artifactId}.git</developerConnection>
-		<url>https://github.com/InnovAnon-Inc/${project.artifactId}</url>
-		<tag>HEAD</tag>
-	</scm>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 <repositories>
     <repository>
         <id>localDropbox</id>
@@ -310,4 +412,5 @@
 		</profile>
 
 	</profiles>
+	-->
 </project>
