@@ -15,10 +15,19 @@
 	<artifactId>Structs</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
+	<description>Data Structures in Java</description>
+	
+	
+	
+	
+	
+	
+	
+	
 <!-- 
 	<name>${project.artifactId}</name>
 	<url>https://innovanon-inc.github.io/${project.artifactId}.git</url>-->
-	<description>Data Structures in Java</description>
+	
 	
 	<!-- 
 	<issueManagement>
