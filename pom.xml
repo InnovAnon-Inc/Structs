@@ -195,9 +195,15 @@
 		<tag>HEAD</tag>
 	</scm>
 	<repositories>
-    <repository>
+        <repository>
         <id>localDropbox</id>
         <url>${dropbox.path}</url>
+        <snapshots>
+        <enabled>true</enabled>
+        </snapshots>
+        <releases>
+        <enabled>true</enabled>
+        </releases>
     </repository>
 </repositories>
 	<distributionManagement>
