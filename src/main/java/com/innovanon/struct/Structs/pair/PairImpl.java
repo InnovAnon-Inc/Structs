@@ -5,48 +5,14 @@ package com.innovanon.struct.Structs.pair;
 
 /**
  * @author gouldbergstein
- *
+ * @param <CAR> Contents of the Address part of Register number
+ * @param <CDR> Contents of the Decrement part of Register number
  */
-public class PairImpl<A, B> implements Pair<A, B> {
-
-	private A car;
-	private B cdr;
-
+public abstract class PairImpl<CAR, CDR> implements Pair<CAR, CDR> {
 	/**
-	 * @param car
-	 * @param cdr
+	 * @see #toString(Class)
+	 * @see Object#getClass()
 	 */
-	public PairImpl(A car, B cdr) {
-		this.car = car;
-		this.cdr = cdr;
-	}
-
-	/**
-	 * @return the car
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.innovanon.simon.struct.pair.Pair#getCAR()
-	 */
-	@Override
-	public A getCAR() {
-		return car;
-	}
-
-	/**
-	 * @return the cdr
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.innovanon.simon.struct.pair.Pair#getCDR()
-	 */
-	@Override
-	public B getCDR() {
-		return cdr;
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -54,6 +20,14 @@ public class PairImpl<A, B> implements Pair<A, B> {
 	 */
 	@Override
 	public String toString() {
-		return String.format("PairImpl [car=%s, cdr=%s]", car, cdr);
+		return toString(this.getClass());
+	}
+	
+	/**
+	 * @param subtype the type of the invoking object
+	 * @return a formated String for use with {@link #toString()}
+	 */
+	protected String toString(Class<?> subtype) {
+		return String.format("%s [car=%s, cdr=%s]", subtype.getSimpleName(),getCar(),getCdr());
 	}
 }
