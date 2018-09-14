@@ -17,8 +17,18 @@
 	<packaging>jar</packaging>
 	<description>Data Structures in Java</description>
 	
-	
-	
+	<url>${project_url}</url>
+	<distributionManagement>
+	<site>
+	<id>localDropbox</id>
+	<url>${dropbox.path}</url>
+	</site>
+	</distributionManagement>
+	<scm>
+	<connection>${scm_connection}</connection>
+	<developerConnection>${scm_developerConnection}</developerConnection>
+	<url>${scm_url}</url>
+	</scm>
 	
 	
 	
