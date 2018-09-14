@@ -15,16 +15,26 @@ import java.util.Random;
 /**
  * @author gouldbergstein
  * @see java.util.ArrayList
+ * @param <E> type of element contained within the baag
  */
 public class BagImpl<E> implements Bag<E> {
-
+	/**
+	 * the underlying data structure: an ordered set, so that we might randomize that order
+	 */
 	private List<E> data;
+	/**
+	 * whether the queue has been randomized
+	 */
 	private boolean isShuffled;
+	/**
+	 * the source of entropy
+	 */
 	private Random random;
 
 	/**
-	 * @param initialCapacity
-	 * @param random
+	 * @param initialCapacity the initial capacity for the underlying data structure
+	 * @param random the random to set
+	 * @see java.util.ArrayList
 	 */
 	public BagImpl(int initialCapacity, Random random) {
 		data = new ArrayList<>(initialCapacity);
@@ -34,8 +44,8 @@ public class BagImpl<E> implements Bag<E> {
 
 	/**
 	 * convenience constructor
-	 * @param copy
-	 * @param random
+	 * @param copy the data structure to copy
+	 * @param random the random to set
 	 * @see #BagImpl(int, Random)
 	 * @see #addAll(Collection)
 	 */
@@ -46,8 +56,8 @@ public class BagImpl<E> implements Bag<E> {
 	
 	/**
 	 * convenience constructor
-	 * @param copy
-	 * @param random
+	 * @param copy the data structure to copy
+	 * @param random the random to set
 	 * @see #BagImpl(Collection, Random)
 	 */
 	@SafeVarargs
@@ -365,5 +375,4 @@ public class BagImpl<E> implements Bag<E> {
 	public String toString() {
 		return String.format("BagImpl [isShuffled=%s, random=%s, data=%s]", isShuffled, random, data);
 	}
-
 }
