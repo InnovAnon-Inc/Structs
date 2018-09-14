@@ -17,13 +17,13 @@ package com.innovanon.struct.Structs.pair;
 public interface Pair<CAR, CDR> {
 	/**
 	 * @return the {@link CAR}
-	 * @see #CAR
+	 * @see Pair#CAR
 	 */
 	CAR getCar();
 
 	/**
 	 * @return the {@link CDR}
-	 * @see #CDR
+	 * @see Pair#CDR
 	 */
 	CDR getCdr();
 }
